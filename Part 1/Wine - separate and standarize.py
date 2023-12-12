@@ -23,9 +23,5 @@ df_scaled = pd.DataFrame(df_scaled, columns=df.columns)
 # Add the last column back
 df_scaled = pd.concat([df_scaled, last_col], axis=1)
 
-# Split the dataset into training and test sets
-train, test = train_test_split(df_scaled, test_size=0.2, random_state=42)
-
 # Save them in two .txt files, using tabulation as a marker
-train.to_csv('A3-wine/wine-train.txt', sep='\t', index=False)
-test.to_csv('A3-wine/wine-test.txt', sep='\t', index=False)
+df_scaled.to_csv('A3-wine/wine-data.txt', sep='\t', index=False)
